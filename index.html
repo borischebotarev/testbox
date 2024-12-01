@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <script src="https://cdn.rapport.cloud/rapport-web-viewer/rapport.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/code.css" rel="stylesheet">
+  <link href="./css/state.css" rel="stylesheet">
+  <link href="./css/wave.css" rel="stylesheet">
+  <title></title>
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="container" id="main-container">
+
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__content">
+          <div class="header__nav">
+            <p class="header__link">
+              <span class="header__item">
+                Pursue Your Goal
+                <svg viewBox="0 0 10 11" fill="none" class="header__arr" width="10" height="11">
+                  <path d="M4.24264 1.00004L8.48528 5.24268L4.24264 9.48532" stroke="currentColor" stroke-width="2"></path>
+                </svg>
+              </span>
+              <span class="header__menu">
+                <a class="header__res" target="_blank" href="https://getschooled.com/journey/get-to-college/">Get to College</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/journey/succeed-in-college/">Succeed In College</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/journey/find-a-job/">Find a Job</a>
+              </span>
+            </p>
+            <p class="header__link">
+              <span class="header__item">
+                Resources
+                <svg viewBox="0 0 10 11" fill="none" class="header__arr" width="10" height="11">
+                  <path d="M4.24264 1.00004L8.48528 5.24268L4.24264 9.48532" stroke="currentColor" stroke-width="2"></path>
+                </svg>
+              </span>
+              <span class="header__menu">
+                <a class="header__res" target="_blank" href="https://getschooled.com/text-us/">Text an Advisor</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/scholarships/">Find Scholarships</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/college-review/">Review my College App Essay</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/college-help/">Review my Resume</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/job-search/">Find my First Job</a>
+              </span>
+            </p>
+            <p class="header__link">
+              <span class="header__item">
+                Educators & Partners
+                <svg viewBox="0 0 10 11" fill="none" class="header__arr" width="10" height="11">
+                  <path d="M4.24264 1.00004L8.48528 5.24268L4.24264 9.48532" stroke="currentColor" stroke-width="2"></path>
+                </svg>
+              </span>
+              <span class="header__menu">
+                <a class="header__res" target="_blank" href="https://getschooled.com/educators/">Resources for Educators</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/partner-with-us/">Partner with Us</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/join-our-community/">Join Our Community</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/partner-content-database/">Educator Content Library</a>
+                <a class="header__res" target="_blank" href="https://getschooled.com/our-approach/">Our Impact & Approach</a>
+              </span>
+            </p>
+          </div>
+          <img alt="Client Logo" class="logo" id="client-logo-id">
+          <div class="header__auth">
+            <a class="header__link signupBtn">
+              <span class="header__item">Sign Up</span>
+            </a>
+            <a class="header__link loginBtn">
+              <span class="header__item">Login</span>
+            </a>
+          </div>
+          <div class="mobile-button" id="mobileMenu">
+            <svg fill="none" viewBox="0 0 22 15" class="css-rkfa4s edw726n0" height="15" width="22">
+              <g stroke="#021546" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                <path d="m17.5801 1.38306c-5.0844.04257-10.16876.08514-15.25314.12772"></path>
+                <path d="m20.3037 7.07651c-4.9002-.03201-8.8029-.13378-13.7031-.16579"></path>
+                <path d="m18.4775 12.6497c-5.2318.0345-11.46115.1388-16.69297.1734"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="mobile-menu">
+            <div class="mobile-wr">
+              <div class="header__auth">
+                <a class="header__link signupBtn">
+                  <span class="header__item">Sign Up</span>
+                </a>
+                <a class="header__link loginBtn">
+                  <span class="header__item">Login</span>
+                </a>
+                <hr>
+              </div>
+              <p class="header__small">Pursue Your Goal</p>
+              <a class="header__res" target="_blank" href="https://getschooled.com/journey/get-to-college/">Get to College</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/journey/succeed-in-college/">Succeed In College</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/journey/find-a-job/">Find a Job</a>
+              <hr>
+              <p class="header__small">Resources</p>
+              <a class="header__res" target="_blank" href="https://getschooled.com/text-us/">Text an Advisor</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/scholarships/">Find Scholarships</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/college-review/">Review my College App Essay</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/college-help/">Review my Resume</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/job-search/">Find my First Job</a>
+              <hr>
+              <p class="header__small">Educators & Partners</p>
+              <a class="header__res" target="_blank" href="https://getschooled.com/educators/">Resources for Educators</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/partner-with-us/">Partner with Us</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/join-our-community/">Join Our Community</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/partner-content-database/">Educator Content Library</a>
+              <a class="header__res" target="_blank" href="https://getschooled.com/our-approach/">Our Impact & Approach</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="wrapper">
+        <div class="content">
+          <!--WELCOME-->
+          <div id="step-welcome">
+            <div class="step">
+              <div class="step__left">
+                <img class="step__banner" src="img/Coaches/4x5_Coaches_Branded.png" alt="banner">
+              </div>
+              <div class="step__right">
+                <div class="step__title">Interview Coach</div>
+                <!--START-->
+                <div id="step-start">
+                  <div class="step__intro">Interview Coach will help you elevate your job interviewing skills by practicing for a Retail, Restaurant, or Coffee Shop job. After the 15 minute conversation, you'll receive instant feedback on what you did well, and how you can improve.</div>
+                  <button class="step__button" type="button" id="startBtn">Get Started</button>
+                </div>
+                <div class="step__login" id="step-login">
+                  <div class="login">
+                    <button type="button" class="login__close" id="login-close">
+                      <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="19.2" cy="19.2" r="18.2" fill="white" stroke="#D9DCE3" stroke-width="2"/>
+                        <path d="M13.1555 13.1531L19.3266 19.3242M19.3266 19.3242L13.1555 25.4953M19.3266 19.3242L25.4977 25.4953M19.3266 19.3242L25.4977 13.1531" stroke="#606A81" stroke-width="3"/>
+                      </svg>
+                    </button>
+                    <p class="login__title">Start Your Interview<br>Coach Experience</p>
+                    <a class="login__signup step__button signupBtn">Sign Up</a>
+                    <a class="login__login step__button loginBtn">Login</a>
+                    <p class="login__ingo">Get Schooled never sells your data!</p>
+                  </div>
+                </div>
+                <!--CHOOSE-->
+                <div id="step-choose">
+                  <div class="step__intro">Choose a Job Category:</div>
+                  <ul class="step__list" id="choose-job">
+                    <li class="step__item" data-job="retail">
+                      <img class="step__icon" src="img/Categories%20Circle/Icon_Shopping%20(1).svg" alt="Retail">
+                      <span class="step__caption">Retail</span>
+                    </li>
+                    <li class="step__item" data-job="coffeeShop">
+                        <img class="step__icon" src="img/Categories%20Circle/Icon_CoffeeShop%20(1).svg" alt="CoffeeShop">
+                        <span class="step__caption">Coffee Shop</span>
+                    </li>
+                    <li class="step__item" data-job="restaurant">
+                        <img class="step__icon" src="img/Categories%20Circle/Icon_Food%20(1).svg" alt="Restaurant">
+                        <span class="step__caption">Restaurant</span>
+                    </li>
+                  </ul>
+                  <div class="step__language">
+                    <div class="language__switcher">
+                      <input type="radio" name="language" class="language__input" id="language-en" value="en" checked>
+                      <label for="language-en" class="language__label">English</label>
+                      <input type="radio" name="language" class="language__input" id="language-es" value="es">
+                      <label for="language-es" class="language__label">Español</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--INTERVIEW-->
+          <div class="interview" id="step-interview">
+            <p class="interview__title">Interview Coach</p>
+            <div class="interview__body">
+              <div class="interview__content">
+                <p class="interview__header" id="jobTitle"></p>
+                <p class="interview__subheader" id="questionCountText"></p>
+                <div class="interview__script" id="script">
+                  <div class="non-editable"></div>
+                  <div class="surface">
+                    <div class="content-wrapper">
+                      <rapport-scene
+                        background-color="white"
+                        class="rapport-scene-element"
+                        id="rapportScene"
+                        loading-image=""
+                        progress-bar=true
+                        show-logo=false
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="interview__button preparing" id="preparingBtn" disabled>Preparing Report...</button>
+                <button type="button" class="interview__button end-button" id="endBtn">See Report</button>
+                <button type="button" class="interview__button spacebar" onclick="onClickSpacebar()">
+                  <span class="spacebar__content">
+                    <svg class="spacebar__icon spacebar__stop" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M26 1H1V26H26V1Z" fill="#FF3F00" stroke="#FF3F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="spacebar__icon spacebar__start" width="23" height="34" viewBox="0 0 23 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11.547 2C10.462 2 9.42146 2.43101 8.65426 3.19821C7.88706 3.9654 7.45605 5.00595 7.45605 6.09093V17.0001C7.45605 18.0851 7.88706 19.1256 8.65426 19.8928C9.42146 20.66 10.462 21.091 11.547 21.091C12.632 21.091 13.6725 20.66 14.4397 19.8928C15.2069 19.1256 15.6379 18.0851 15.6379 17.0001V6.09093C15.6379 5.00595 15.2069 3.9654 14.4397 3.19821C13.6725 2.43101 12.632 2 11.547 2Z"
+                        stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path
+                        d="M21.091 14.2715V16.9988C21.091 19.5304 20.0853 21.9583 18.2952 23.7485C16.5051 25.5386 14.0771 26.5443 11.5455 26.5443C9.01388 26.5443 6.58594 25.5386 4.79581 23.7485C3.00568 21.9583 2 19.5304 2 16.9988V14.2715"
+                        stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M11.5439 26.5439V31.9985" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M6.08789 32H16.997" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="spacebar__text">Start</span>
+                  </span>
+                </button>
+              </div>
+              <div class="interview__interviewer">
+                <img class="interview__avatar" alt="avatar" id="jobAvatar">
+                <img class="interview__icon" alt="icon" id="jobIcon">
+                <div class="interview__wave" id="interviewWave">
+                  <div class="wave" id="wave">
+                    <div class="wave__column wave__column--1"></div>
+                    <div class="wave__column wave__column--2"></div>
+                    <div class="wave__column wave__column--3"></div>
+                    <div class="wave__column wave__column--0"></div>
+                    <div class="wave__column wave__column--0 wave__column--delay2"></div>
+                    <div class="wave__column wave__column--0"></div>
+                    <div class="wave__column wave__column--1 wave__column--delay"></div>
+                    <div class="wave__column wave__column--2 wave__column--delay"></div>
+                    <div class="wave__column wave__column--3 wave__column--delay"></div>
+                    <div class="wave__column wave__column--3 wave__column--delay"></div>
+                    <div class="wave__column wave__column--2 wave__column--delay"></div>
+                    <div class="wave__column wave__column--1 wave__column--delay"></div>
+                    <div class="wave__column wave__column--0"></div>
+                    <div class="wave__column wave__column--0 wave__column--delay2"></div>
+                    <div class="wave__column wave__column--0"></div>
+                    <div class="wave__column wave__column--1"></div>
+                    <div class="wave__column wave__column--3"></div>
+                    <div class="wave__column wave__column--4"></div>
+                    <div class="wave__column wave__column--4"></div>
+                    <div class="wave__column wave__column--3"></div>
+                    <div class="wave__column wave__column--1"></div>
+                    <div class="wave__column wave__column--0"></div>
+                    <div class="wave__column wave__column--0"></div>
+                    <div class="wave__column wave__column--1 wave__column--delay"></div>
+                    <div class="wave__column wave__column--2 wave__column--delay"></div>
+                    <div class="wave__column wave__column--3 wave__column--delay"></div>
+                    <div class="wave__column wave__column--3 wave__column--delay"></div>
+                    <div class="wave__column wave__column--2 wave__column--delay"></div>
+                    <div class="wave__column wave__column--1 wave__column--delay"></div>
+                    <div class="wave__column wave__column--0"></div>
+                    <div class="wave__column wave__column--0 wave__column--delay2"></div>
+                    <div class="wave__column wave__column--0"></div>
+                    <div class="wave__column wave__column--3"></div>
+                    <div class="wave__column wave__column--2"></div>
+                    <div class="wave__column wave__column--1"></div>
+                  </div>
+                  <div class="countdown-timer" id="countdownTimer"></div>
+                </div>
+              </div>
+            </div>
+            <img class="interview__powered" src="./img/powered_by.png" width="288"/>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__row footer__row--info">
+          <div class="footer__info">
+            <p class="footer__main">Get Schooled helps young people get to college, find first jobs, and succeed in both.</p>
+            <ul class="footer__socials">
+              <li class="footer__social-item">
+                <a href="https://www.facebook.com/GetSchooled/" class="footer__social-link" title="facebook" rel="noopener noreferrer">
+                  <img src="img/icons/ic_fb.svg" alt="fb">
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a href="https://twitter.com/getschooled" class="footer__social-link" title="twitter" rel="noopener noreferrer">
+                  <img src="img/icons/ic_twiiter.svg" alt="twitter">
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a href="https://www.instagram.com/getschooled/" class="footer__social-link" title="instagram" rel="noopener noreferrer">
+                  <img src="img/icons/ic_insta.svg" alt="instagram">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <ul class="footer__column footer__column--info">
+            <li class="footer__item">
+              <a href="https://getschooled.com/about-us/" class="footer__link" target="_blank">About Us</a>
+            </li>
+            <li class="footer__item">
+              <a href="https://getschooled.com/about-us/our-team/" class="footer__link" target="_blank">Our Team</a>
+            </li>
+            <li class="footer__item">
+              <a href="https://getschooled.com/about-us/board-of-directors/" class="footer__link" target="_blank">Board of Directors</a>
+            </li>
+            <li class="footer__item">
+              <a href="https://getschooled.com/faqs/" class="footer__link" target="_blank">FAQ</a>
+            </li>
+          </ul>
+          <div class="footer__columns">
+            <ul class="footer__column">
+              <li class="footer__item">
+                <p class="footer__title">Achieve a Goal</p>
+              </li>
+              <li class="footer__item">
+                <a href="https://getschooled.com/journey/get-to-college/" class="footer__link" target="_blank">Get to College</a>
+              </li>
+              <li class="footer__item">
+                <a href="https://getschooled.com/journey/succeed-in-college/" class="footer__link" target="_blank">Succeed In College</a>
+              </li>
+              <li class="footer__item">
+                <a href="https://getschooled.com/journey/find-a-job/" class="footer__link" target="_blank">Get a Job</a>
+              </li>
+            </ul>
+            <ul class="footer__column">
+              <li class="footer__item">
+                <p class="footer__title">Resources</p>
+              </li>
+              <li class="footer__item">
+                <a href="https://getschooled.com/text-us/" class="footer__link" target="_blank">Text Us</a>
+              </li>
+              <li class="footer__item">
+                <a href="https://getschooled.com/college-review/" class="footer__link" target="_blank">College Application Essay Review</a>
+              </li>
+              <li class="footer__item">
+                <a href="https://getschooled.com/resume-help/" class="footer__link" target="_blank">Resume Review</a>
+              </li>
+              <li class="footer__item">
+                <a href="https://getschooled.com/job-search/" class="footer__link" target="_blank">Job Search</a>
+              </li>
+            </ul>
+            <ul class="footer__column">
+              <li class="footer__item">
+                <p class="footer__title">For Educators</p>
+              </li>
+              <li class="footer__item">
+                <a href="https://getschooled.com/educators/" class="footer__link" target="_blank">Educator Resources</a>
+              </li>
+              <li class="footer__item">
+                <a href="https://getschooled.com/educators/join-our-community/" class="footer__link" target="_blank">Join Our Community</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__row footer__row--rules">
+          <p class="footer__copyright">©2024 Get Schooled</p>
+          <a class="footer__link" href="https://getschooled.com/privacy/" target="_blank">Privacy Policy</a>
+          <a class="footer__link" href="https://getschooled.com/terms/" target="_blank">Terms & Conditions</a>
+          <a class="footer__link" href="https://getschooled.com/contact-us/" target="_blank">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="loading" id="loadingContainer">
+    <div class="loading__circle"></div>
+  </div>
+  <script src="./js/_dom-variables.js"></script>
+  <script src="./client-config.js"></script>
+
+  <script src="./js/index.js"></script>
+  <script src="./js/aria_config.js"></script>
+
+  <script src="./js/audiorecorder.js"></script>
+  <script src="./js/transcriptlogger.js"></script>
+  <script src="./js/remindspacebar.js"></script>
+  <script src="./js/vpcontentmanager.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+.wave {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.wave__column {
+  background-color: #FFFFFF;
+  height: 70px;
+  width: 4px;
+  transform-origin: center;
+  transform: scaleY(0.1);
+  transition: transform 0.2s linear;
+  will-change: transform;
+  animation: none;
+  animation-duration: 1.5s;
+  animation-iteration-count: 0;
+}
+
+@media all and (max-width: 768px) {
+  .wave__column {
+    height: 50px;
+    width: 3px;
+  }
+}
+.wave.active .wave__column {
+  animation-iteration-count: infinite;
+}
+.wave__column--0 {
+  animation-name: waveLittle;
+}
+.wave__column--1 {
+  animation-name: waveSmall;
+}
+.wave__column--2 {
+  animation-name: waveMiddle;
+}
+.wave__column--3 {
+  animation-name: waveBig;
+}
+.wave__column--4 {
+  animation-name: waveHuge;
+}
+.wave__column--delay {
+  animation-delay: 0.5s;
+}
+.wave__column--delay2 {
+  animation-delay: 1s;
+}
+@keyframes waveSmall {
+  0% {
+    transform: scaleY(0.25);
+  }
+
+  12% {
+    transform: scaleY(0.6);
+  }
+
+  24% {
+    transform: scaleY(0.2);
+  }
+
+  32% {
+    transform: scaleY(0.6);
+  }
+
+  44% {
+    transform: scaleY(0.2);
+  }
+
+  52% {
+    transform: scaleY(0.6);
+  }
+
+  100% {
+    transform: scaleY(0.25);
+  }
+}
+@keyframes waveLittle {
+  0% {
+    transform: scaleY(0.25);
+  }
+
+  12% {
+    transform: scaleY(0.4);
+  }
+
+  24% {
+    transform: scaleY(0.2);
+  }
+
+  32% {
+    transform: scaleY(0.4);
+  }
+
+  44% {
+    transform: scaleY(0.2);
+  }
+
+  52% {
+    transform: scaleY(0.4);
+  }
+
+  100% {
+    transform: scaleY(0.25);
+  }
+}
+@keyframes waveMiddle {
+  0% {
+    transform: scaleY(0.25);
+  }
+
+  12% {
+    transform: scaleY(0.8);
+  }
+
+  24% {
+    transform: scaleY(0.2);
+  }
+
+  32% {
+    transform: scaleY(0.8);
+  }
+
+  44% {
+    transform: scaleY(0.2);
+  }
+
+  52% {
+    transform: scaleY(0.8);
+  }
+
+  100% {
+    transform: scaleY(0.25);
+  }
+}
+
+@keyframes waveBig {
+  0% {
+    transform: scaleY(0.25);
+  }
+
+  10% {
+    transform: scaleY(1);
+  }
+
+  20% {
+    transform: scaleY(0.2);
+  }
+
+  30% {
+    transform: scaleY(1);
+  }
+
+  40% {
+    transform: scaleY(0.2);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0.25);
+  }
+}
+@keyframes waveHuge {
+  0% {
+    transform: scaleY(0.25);
+  }
+
+  10% {
+    transform: scaleY(1.2);
+  }
+
+  20% {
+    transform: scaleY(0.2);
+  }
+
+  30% {
+    transform: scaleY(1.2);
+  }
+
+  40% {
+    transform: scaleY(0.2);
+  }
+
+  50% {
+    transform: scaleY(1.2);
+  }
+
+  100% {
+    transform: scaleY(0.25);
+  }
+}

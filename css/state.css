@@ -1,0 +1,108 @@
+.indicator {
+  width: 200px;
+  background-color: rgba(79, 221, 143, 0.25);
+  border-radius: 8px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  z-index: 99;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-family: arial, sans-serif;
+  flex-direction: column;
+  top: 0;
+}
+
+@media all and (max-width: 768px) {
+  .indicator {
+    position: static;
+    padding: 5px 10px;
+    float: right;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+}
+
+
+.shaded-box {
+  display: none;
+  gap: 15px;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+}
+
+@media all and (max-width: 768px) {
+  .shaded-box {
+    margin-top: 10px;
+    position: static;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.shaded-box-title {
+  color: red;
+  white-space: nowrap;
+}
+
+@media all and (max-width: 768px) {
+  .shaded-box {
+    white-space: break-spaces;
+  }
+}
+
+.input-container {
+  position: relative;
+  display: none;
+  align-items: flex-end;
+  justify-content: center; /* Center content horizontally */
+  flex-grow: 1;
+  gap: 10px;
+}
+
+#editableDiv {
+  width: 100%; /* You can adjust this as needed */
+  height: 70px; /* No fixed height for contenteditable */
+  padding: 10px;
+  border: 1px solid #ccc;
+  flex-grow: 1;
+  border-radius: 4px;
+  outline: none;
+  overflow: auto;
+  resize: vertical;
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
+
+.editButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#siri-container,
+#waveformCanvas {
+  width: 400px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  top: 50%; /* Align vertically at 50% of the parent */
+  left: 50%; /* Align horizontally at 50% of the parent */
+  transform: translate(-50%, -50%); /* Center the element */
+  z-index: 90; /* Place the element on top of other content */
+  border-radius: 10px;
+}
+
+@media all and (max-width: 768px) {
+  #siri-container,
+  #waveformCanvas {
+    width: 100%;
+  }
+}
