@@ -6,8 +6,8 @@ const projectConfigMap = new Map([
       logoImagePath: 'img/getschooled.png', // inside path: "/[clientName]/"
       instructionsFilePath: 'docs/instructions.pdf', // inside path: "/[clientName]/"
       pageTitle: 'Get Schooled', // Title for browser tab
-      signupRedirectUrl: 'https://getschooled.com/sign-up/?redirect_from=interviewcoach',
-      loginRedirectUrl: 'https://getschooled.com/log-in/?redirect_from=interviewcoach',
+      signupRedirectUrl: 'https://getschooled.com/sign-up/?redirect_from=resumecoach',
+      loginRedirectUrl: 'https://getschooled.com/log-in/?redirect_from=resumecoach',
       callbackActions: {
         before: []
       },
