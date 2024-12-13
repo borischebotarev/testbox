@@ -114,6 +114,9 @@ body {
   font-size: 16px;
   line-height: 24px;
   padding-right: 20px;
+  display: flex;
+  align-items: center;
+  height: 60px;
 }
 .header__auth__menu {
   display: none;
@@ -245,6 +248,8 @@ body {
   .mobile-menu .header__auth {
     display: flex;
     flex-direction: column;
+    align-items: start;
+    height: fit-content;
   }
   .mobile-menu .header__auth .header__item {
     padding: 0;
