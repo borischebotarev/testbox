@@ -359,6 +359,7 @@ body {
 .step__banner {
   max-width: 100%;
   border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px #00000040;
 }
 .step__title {
   font-size: 72px;
@@ -369,6 +370,7 @@ body {
 .step__intro {
   font-size: 24px;
   line-height: 36px;
+  margin-bottom: 28px;
 }
 .step__button {
   background-color: transparent;
@@ -390,29 +392,115 @@ body {
 .step__button:hover {
   text-decoration: none;
 }
-.step__list {
+.step__button:disabled {
+  background-image: none;
+  border: solid 3px #B3B9C7;
+  color: #B3B9C78C;
+  cursor: not-allowed;
+}
+.language__select {
+  position: relative;
+  display: inline-block;
+  width: 280px;
+}
+.language__select select {
+  width: 100%;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-family: "Work Sans", sans-serif;
+  font-size: 24px;
+  line-height: 28.8px;
+  color: #021546;
+  border: solid 2px #021546;
+  border-radius: 10px;
+  appearance: none;
+  background-color: white;
+  cursor: pointer;
+}
+.language__select::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #021546;
+}
+.language__select select option {
+  background-color: white;
+  font-weight: 600;
+  font-family: "Work Sans", sans-serif;
+  font-size: 24px;
+  line-height: 28.8px;
+}
+.language__select select option:checked {
+  background-color: #00DF91; 
+  color: #021546;
+}
+.resume__template__list {
   list-style: none;
   display: flex;
-  justify-content: space-around;
-  gap: 30px;
-  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 40px;
 }
-.step__item {
+.resume__template__list__item {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   -webkit-tap-highlight-color: transparent;
-}
-.step__icon {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 20px;
-}
-.step__caption {
-  font-size: 28px;
+  width: 250px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 31px;
+  line-height: 29px;
+}
+
+
+
+.coach__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 28px;
+  .coach__list__item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    width: 166px;
+    height: 136px;
+    border-radius: 20px;
+    position: relative;
+    .coach__image {
+      width: 166px;
+      height: 136px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 4px 0px #00000040;
+    }
+    .hover {
+      display: none;
+      position: absolute;
+      left: -12px;
+      top: -12px;
+      width: 190px;
+      height: 160px;
+      border: solid 5px #E0E0E0;
+      border-radius: 5px;
+    }
+  }
+  .coach__list__item:hover {
+    .hover {
+      display: block;
+    }
+  }
 }
 .step__login {
   display: none;
@@ -425,39 +513,12 @@ body {
   justify-content: center;
   align-items: center;
 }
-.step__language {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-}
-.language__switcher {
-  width: 280px;
-  height: 50px;
-  border-radius: 50px;
-  border: 2px solid #021546;
-  background-color: #DADADA;
-  display: flex;
-}
-.language__input {
-  display: none;
-}
-.language__label {
-  color: #021546;
-  font-size: 24px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 50%;
-}
-.language__input:checked + .language__label {
-  border-radius: 50px;
-  border: 2px solid #fff;
-  background-color: #00DF91;
-}
-#step-choose,
 #step-welcome,
+#step-resume-template,
+#step-contact-info,
+#step-job-info,
+#step-coach,
+#step-language,
 #step-interview {
   display: none;
 }
@@ -467,6 +528,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+  .hide__for__mobile {
+    display: none;
   }
   .step__left__title {
     display: block;
@@ -482,15 +546,28 @@ body {
   .step__intro {
     font-size: 19px;
     line-height: 28px;
+    margin-bottom: 24px;
   }
-  .step__list {
-    flex-direction: column;
+  .resume__template__list {
+    justify-content: center;
   }
-  .step__icon {
-    margin-bottom: 12px;
-  }
-  .step__caption {
-    font-size: 22px;
+  .coach__list {
+    column-gap: 25px;
+    row-gap: 25px;
+    .coach__list__item {
+      width: 155px;
+      height: 126px;
+      .coach__image {
+        width: 155px;
+        height: 126px;
+      }
+      .hover {
+        left: -12px;
+        top: -12px;
+        width: 179px;
+        height: 150px;
+      }
+    }
   }
 }
 
@@ -647,29 +724,9 @@ body {
 .interview__avatar {
   max-width: 100%;
 }
-.interview__icon {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 60px;
-  height: 60px;
-}
 .interview__wave {
   padding: 20px;
   position: relative;
-}
-.interview__wave.coffeeShop {
-  background: linear-gradient(90deg, #F05444 0%, #F5E103 100%);
-}
-.interview__wave.restaurant {
-  background: linear-gradient(90deg, #009046 0%, #8BC340 100%);
-}
-.interview__wave.retail {
-  background: linear-gradient(90deg, #385BA9 0%, #655FAA 62.53%, #7661AA 100%);
-}
-.interview__powered {
-  display: block;
-  margin: 50px auto 0;
 }
 
 @media all and (max-width: 1050px) {

@@ -116,10 +116,10 @@ function saveRecordingToServer(blob) {
   formData.append("audio", audio_file);
   formData.append("transcription", json_file);
 
-  if(typeof selectedJob === 'undefined')
+  if(typeof selectedResumeTemplate === 'undefined')
     fetchUrl = serverUrl + "/v2/storageservice?company=" + clientName + "/production/";
   else
-    fetchUrl = serverUrl + "/v2/storageservice?company=" + clientName + "/production/" + selectedJob;
+    fetchUrl = serverUrl + "/v2/storageservice?company=" + clientName + "/production/" + selectedResumeTemplate;
 
   fetch(fetchUrl, {
     method: "POST",

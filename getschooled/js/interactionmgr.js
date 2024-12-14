@@ -173,7 +173,7 @@ startFunction = async () => {
         startRecording();
 
         intro_txt = OPENING_STATEMENT;
-        cmd = selectedJob + '_intro';
+        cmd = selectedResumeTemplate + '_intro';
 			  //console.log(cmd);
 			  await rapportScene.modules.commands.trigger(cmd);
         //rapportScene.modules.tts.sendText(intro_txt);
@@ -247,7 +247,7 @@ function customPttKeyUpHandler() {
     };
 
     append_to_json(userData);
-    q_count = await analyze_response(user_response, q_count, selectedJob);
+    q_count = await analyze_response(user_response, q_count, selectedResumeTemplate);
   }, 2000); // Delay of2s to allow ASR to complete.
   $('.spacebar').hide();
   // Hide the non-editable text box & set the question field to ""

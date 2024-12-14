@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', onPageLoad);
-let selectedJob;
 
 // Authorize the User on Page Load
 function onPageLoad() {
@@ -27,50 +26,59 @@ function onPageLoad() {
       stopLoadingAnimation();
       console.log(data);
       // Enable elements on the target URL if authorized
-      if (data.body.email == user_email && user_email != null) {
+      if (true) { //(data.body.email == user_email && user_email != null) {
         step1.style.display = 'none';
         step2.style.display = 'block';
         stepWelcome.style.display = 'block';
+        stepBanner.classList.add('hide__for__mobile');
         document.querySelectorAll('.header__auth').forEach(el => el.style.display = 'none');
         step2List.addEventListener('click', (event) => {
-          selectedJob = event.target.closest("li")?.getAttribute('data-job');
-          selectedLanguage = document.querySelector('.language__input:checked').value;
-          let title;
-          let avatarSrc;
-          let iconSrc;
-          switch (selectedJob) {
-            case 'coffeeShop':
-              title = 'Coffee Shop';
-              avatarSrc = 'Agent Coffee.png';
-              iconSrc = 'Icon_CoffeeShop%20(1).svg';
-              break;
-            case 'restaurant':
-              title = 'Restaurant';
-              avatarSrc = 'Agent Restaurant.png';
-              iconSrc = 'Icon_Food%20(1).svg';
-              break;
-            case 'retail':
-              title = 'Retail';
-              avatarSrc = 'Agent Retail.png';
-              iconSrc = 'Icon_Shopping%20(1).svg';
-              break;
-            default:
-              return;
-          }
-          document.getElementById('jobTitle').innerText = title + ' Interview';
-          document.getElementById('jobAvatar').src = 'img/Coaches/' + avatarSrc;
-          document.getElementById('jobIcon').src = 'img/Categories%20Circle/' + iconSrc;
-          document.getElementById('interviewWave').classList.add(selectedJob);
-          stepWelcome.style.display = 'none';
-          stepInterview.style.display = 'block';
+          selectedResumeTemplate = event.target.closest("li")?.getAttribute('resume-template');
+          console.log(selectedResumeTemplate);
+          step2.style.display = 'none';
+          step3Form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            contactInfo = new FormData(event.target);
+            console.log(contactInfo);
+            step3.style.display = 'none';
+            step4Form.addEventListener('submit', (event) => {
+              event.preventDefault();
+              jobInfo = new FormData(event.target);
+              console.log(jobInfo);
+              step4.style.display = 'none';
+              step5List.addEventListener('click', (event) => {
+                selectedCoach = event.target.closest("li")?.getAttribute('coach');
+                console.log(selectedCoach);
+                document.getElementById('coachAvatar').src = `img\\Coaches\\Coach${selectedCoach}.png`;
+                step5.style.display = 'none';
+                step6Form.addEventListener('submit', (event) => {
+                  event.preventDefault();
+                  const data = new FormData(event.target);
+                  selectedLanguage = data.get('language');
+                  console.log(selectedLanguage);
+                  step6.style.display = 'none';
+                  stepWelcome.style.display = 'none';
+                  stepInterview.style.display = 'block';
 
-          chosenAI.projectId = Wave.projectId;
-          chosenAI.projectToken = Wave.projectToken;
-          chosenAI.aiUserId = Wave.aiUserId;
-          chosenAI.lobbyZoneId = Wave.lobbyZoneId;
-          chosenAI.display = Wave.display;
-          startLoadingAnimation();
-          loadContent(selectedJob);
+                  chosenAI.projectId = Wave.projectId;
+                  chosenAI.projectToken = Wave.projectToken;
+                  chosenAI.aiUserId = Wave.aiUserId;
+                  chosenAI.lobbyZoneId = Wave.lobbyZoneId;
+                  chosenAI.display = Wave.display;
+                  startLoadingAnimation();
+                  loadContent(selectedResumeTemplate);
+                });
+                step6LanguageSelect.addEventListener('change', () => {
+                  step6FormBtn.disabled = false;
+                });
+                step6.style.display = 'block';
+              })
+              step5.style.display = 'block';
+            });
+            step4.style.display = 'block';
+          });
+          step3FormBtn.disabled = false;  //tmp
+          step3.style.display = 'block';
         })
       } else {
         stopLoadingAnimation();

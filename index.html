@@ -115,7 +115,7 @@
             <div class="step">
               <div class="step__left">
                 <div class="step__left__title">Resume Coach</div>
-                <img class="step__banner" src="img/Coaches/4x5_Coaches_Branded.png" alt="banner">
+                <img id="step-banner" class="step__banner" src="img\Coaches\4x5_Coaches_Branded.png" alt="banner">
               </div>
               <div class="step__right">
                 <div class="step__title">Resume Coach</div>
@@ -138,31 +138,83 @@
                     <p class="login__ingo">Get Schooled never sells your data!</p>
                   </div>
                 </div>
-                <!--CHOOSE-->
-                <div id="step-choose">
-                  <div class="step__intro">Choose a Job Category:</div>
-                  <ul class="step__list" id="choose-job">
-                    <li class="step__item" data-job="retail">
-                      <img class="step__icon" src="img/Categories%20Circle/Icon_Shopping%20(1).svg" alt="Retail">
-                      <span class="step__caption">Retail</span>
+                <!--SELECT RESUME TEMPLATE-->
+                <div id="step-resume-template">
+                  <div class="step__intro">Please select your preferred resume template.</div>
+                  <ul class="resume__template__list" id="select-resume-template">
+                    <li class="resume__template__list__item" resume-template="1">
+                      Resume 1
                     </li>
-                    <li class="step__item" data-job="coffeeShop">
-                        <img class="step__icon" src="img/Categories%20Circle/Icon_CoffeeShop%20(1).svg" alt="CoffeeShop">
-                        <span class="step__caption">Coffee Shop</span>
-                    </li>
-                    <li class="step__item" data-job="restaurant">
-                        <img class="step__icon" src="img/Categories%20Circle/Icon_Food%20(1).svg" alt="Restaurant">
-                        <span class="step__caption">Restaurant</span>
+                    <li class="resume__template__list__item" resume-template="2">
+                      Resume 2
                     </li>
                   </ul>
-                  <div class="step__language">
-                    <div class="language__switcher">
-                      <input type="radio" name="language" class="language__input" id="language-en" value="en" checked>
-                      <label for="language-en" class="language__label">English</label>
-                      <input type="radio" name="language" class="language__input" id="language-es" value="es">
-                      <label for="language-es" class="language__label">Español</label>
+                </div>
+                <!--CONTACT INFORMATION FORM-->
+                <div id="step-contact-info">
+                  <div class="step__intro">So that employers know how to reach you, please add your contact information.</div>
+                  <form id="contact-info-form">
+                    <button disabled class="step__button" type="submit" id="contact-info-form-btn">Submit</button>
+                  </form>
+                </div>
+                <!--JOB INFORMATION FORM-->
+                <div id="step-job-info">
+                  <div class="step__intro">If you have a job title and/or the job description, please paste them in here. Doing so will help the AI help you create a more amazing, customized resume!</div>
+                  <form id="job-info-form">
+                    <button class="step__button" type="submit">Submit</button>
+                  </form>
+                </div>
+                <!--SELECT COACH-->
+                <div id="step-coach">
+                  <div class="step__intro">With which Coach do you want to have your conversation?</div>
+                  <ul class="coach__list" id="select-coach">
+                    <li class="coach__list__item" coach="1">
+                      <img src="img\Coaches\Coach1.png" alt="Coach 1" class="coach__image">
+                      <div class="hover"></div>
+                    </li>
+                    <li class="coach__list__item" coach="2">
+                      <img src="img\Coaches\Coach2.png" alt="Coach 2" class="coach__image">
+                      <div class="hover"></div>
+                    </li>
+                    <li class="coach__list__item" coach="3">
+                      <img src="img\Coaches\Coach3.png" alt="Coach 3" class="coach__image">
+                      <div class="hover"></div>
+                    </li>
+                    <li class="coach__list__item" coach="4">
+                      <img src="img\Coaches\Coach4.png" alt="Coach 4" class="coach__image">
+                      <div class="hover"></div>
+                    </li>
+                    <li class="coach__list__item" coach="5">
+                      <img src="img\Coaches\Coach5.png" alt="Coach 5" class="coach__image">
+                      <div class="hover"></div>
+                    </li>
+                    <li class="coach__list__item" coach="6">
+                      <img src="img\Coaches\Coach6.png" alt="Coach 6" class="coach__image">
+                      <div class="hover"></div>
+                    </li>
+                    <li class="coach__list__item" coach="7">
+                      <img src="img\Coaches\Coach7.png" alt="Coach 7" class="coach__image">
+                      <div class="hover"></div>
+                    </li>
+                  </ul>
+                </div>
+                <!--SELECT LANGUAGE-->
+                <div id="step-language">
+                  <div class="step__intro">We’re almost ready to begin building your resume but first, we have a few important questions.</div>
+                  <form id="language-form">
+                    <div class="language__select">
+                      <select autofocus form="language-form" name="language" id="language-select" required>
+                        <option hidden disabled selected value>Select Language</option>
+                        <option value="English">English</option>
+                        <option value="Espanol">Español</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                        <option value="Somali">Somali</option>
+                        <option value="Russian">Russian</option>
+                      </select>
                     </div>
-                  </div>
+                    <button disabled class="step__button" type="submit" id="language-form-btn">Continue</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -211,8 +263,7 @@
                 </button>
               </div>
               <div class="interview__interviewer">
-                <img class="interview__avatar" alt="avatar" id="jobAvatar">
-                <img class="interview__icon" alt="icon" id="jobIcon">
+                <img class="interview__avatar" alt="avatar" id="coachAvatar">
                 <div class="interview__wave" id="interviewWave">
                   <div class="wave" id="wave">
                     <div class="wave__column wave__column--1"></div>
@@ -255,7 +306,6 @@
                 </div>
               </div>
             </div>
-            <img class="interview__powered" src="./img/powered_by.png" width="288"/>
           </div>
         </div>
       </div>

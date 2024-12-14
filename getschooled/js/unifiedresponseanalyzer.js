@@ -36,7 +36,7 @@ async function analyze_response(response, q_count, jobSelection) {
         //analyze_response_with_ai(response);
         toggle_editor(false);
         //rapportScene.modules.tts.sendText(CLOSING_STATEMENT);
-        cmd = selectedJob + '_outro';
+        cmd = selectedResumeTemplate + '_outro';
 			  console.log(cmd);
 			  await rapportScene.modules.commands.trigger(cmd);	
         // console.log("Switching to free-form dialogue...");
