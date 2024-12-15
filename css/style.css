@@ -398,6 +398,61 @@ body {
   color: #B3B9C78C;
   cursor: not-allowed;
 }
+.form__input {
+  position: relative;
+  height: 59px;
+  width: 100%;
+  max-width: 278px;
+  border-radius: 8px;
+  overflow: hidden;
+  .label {
+    position: absolute;
+    top: 26px;
+    left: 16px;
+    font-size: 19.2px;
+    line-height: 28.8px;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    color: #7F879D;
+    transform-origin: 0 0;
+    transform: translate3d(0,0,0);
+    transition: all .2s ease;
+    pointer-events: none;
+  }
+  input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #B3B9C7;
+    font-size: 16px;
+    line-height: 22.4px;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    vertical-align: bottom;
+    padding-top: 15px;
+    padding-right: 9px;
+    padding-bottom: 4px;
+    padding-left: 16px;
+    height: 59px;
+    background: white;
+    color: #021546;
+    caret-color: #021546;
+    transition: all .15s ease;
+    &:not(:placeholder-shown) {
+      + .label {
+        transform: translate3d(0,-22px,0) scale(.75)
+      }
+    }
+    &:focus {
+      border-color: #09BD9E;
+      outline: none;
+      + .label {
+        transform: translate3d(0,-22px,0) scale(.75);
+      }
+    }
+  }
+}
 .language__select {
   position: relative;
   display: inline-block;
@@ -458,9 +513,24 @@ body {
   font-weight: 600;
   line-height: 29px;
 }
-
-
-
+.contact__info__form {
+  display: flex;
+  flex-direction: column;
+  .fields {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 17px;
+    row-gap: 28px;
+    .name__group {
+      flex-grow: 1;
+      display: flex;
+      gap: 17px; 
+    }
+  }
+  .submit__btn {
+    align-self: center;
+  }
+}
 .coach__list {
   list-style: none;
   display: flex;
@@ -550,6 +620,14 @@ body {
   }
   .resume__template__list {
     justify-content: center;
+  }
+  .contact__info__form .fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form__input {
+    max-width: none;
   }
   .coach__list {
     column-gap: 25px;
