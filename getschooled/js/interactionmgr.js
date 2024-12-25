@@ -14,6 +14,7 @@ var asrDelay = 0;
 var pttDown = false;
 var user_response = "";
 var inCodeTest = false;
+var isFormFilling = true;
 var editorOpen = false;
 
 var isAriaSpeaking = false;
@@ -276,15 +277,18 @@ document.onkeydown = function (key) {
 }
 
 function reactKeyDown(evt) {
-  evt.preventDefault();
+  if (!isFormFilling) {
+    evt.preventDefault();
+  }
+
   if (inCodeTest && evt.keyCode == 32) {
     return
   }
 
-  if (!isAriaListening)
+  if (!isAriaListening && !isFormFilling)
     return;
 
-  if (evt.keyCode == 32) // SpaceBar for Tap to Start, Tap to End.
+  if (evt.keyCode == 32 && !isFormFilling) // SpaceBar for Tap to Start, Tap to End.
   {
     if (evt.repeat) {
       return
