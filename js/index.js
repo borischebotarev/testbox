@@ -24,7 +24,6 @@ function onPageLoad() {
     .then(response => response.json())
     .then(data => {
       stopLoadingAnimation();
-      console.log(data);
       // Enable elements on the target URL if authorized
       if (true) { //(data.body.email == user_email && user_email != null) {
         step1.style.display = 'none';
@@ -77,9 +76,29 @@ function onPageLoad() {
             });
             step4.style.display = 'block';
           });
-          step3FormBtn.disabled = false;  //tmp
+          firstName.addEventListener('input', (event) => {
+            validateInput(firstName, firstNameError, setFirstNameInvalid);
+          });
+          lastName.addEventListener('input', (event) => {
+            validateInput(lastName, lastNameError, setLastNameInvalid);
+          });
+          email.addEventListener('input', (event) => {
+            validateInput(email, emailError, setEmailInvalid, 'Invalid Email');
+          });
+          phone.addEventListener('input', (event) => {
+            validateInput(phone, phoneError, setPhoneInvalid, 'Invalid Phone');
+          });
+          gradYear.addEventListener('input', (event) => {
+            validateInput(gradYear, gradYearError, setGradYearInvalid, 'Invalid Grad Year');
+          });
+          city.addEventListener('input', (event) => {
+            validateInput(city, cityError, setCityInvalid);
+          });
+          state.addEventListener('input', (event) => {
+            validateInput(state, stateError, setStateInvalid);
+          });
           step3.style.display = 'block';
-        })
+        });
       } else {
         stopLoadingAnimation();
         stepWelcome.style.display = 'block';
@@ -177,4 +196,36 @@ function showWave() {
 
 function hideWave() {
   wave.classList.remove('active')
+}
+
+function validateInput(input, error, setIsInvalid, typeMismatchMessage) {
+  input.classList.add('dirty');
+  if (input.validity.valid) {
+    error.textContent = '';
+    error.className = 'error';
+  } else if (input.validity.valueMissing) {
+    error.textContent = 'Required';
+  } else if (input.validity.tooShort) {
+    error.textContent = `Min length: ${input.minLength}`;
+  } else if (input.validity.tooLong) {
+    error.textContent = `${input.value.length}/${input.maxLength}`;
+  } else if (input.validity.typeMismatch) {
+    error.textContent = typeMismatchMessage;
+  } else if (input.validity.rangeUnderflow || input.validity.rangeOverflow) {
+    error.textContent = typeMismatchMessage;
+  }
+  error.className = 'error active';
+  setIsInvalid(!input.validity.valid);
+  updateStep3FormSubmit();
+}
+
+function updateStep3FormSubmit() {
+  step3FormBtn.disabled =
+    isFirstNameInvalid
+    || isLastNameInvalid
+    || isEmailInvalid
+    || isPhoneInvalid
+    || isGradYearInvalid
+    || isCityInvalid
+    || isStateInvalid;
 }

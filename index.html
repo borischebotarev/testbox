@@ -153,41 +153,48 @@
                 <!--CONTACT INFORMATION FORM-->
                 <div id="step-contact-info">
                   <div class="step__intro">So that employers know how to reach you, please add your contact information.</div>
-                  <form id="contact-info-form" class="contact__info__form">
+                  <form id="contact-info-form" class="contact__info__form" novalidate>
                     <div class="fields">
                       <div class="name__group">
                         <label for="first-name" class="form__input">
-                          <input name="firstName" required type="text" id="first-name" placeholder="&nbsp;">
+                          <input name="firstName" type="text" id="first-name" placeholder="&nbsp;" required maxlength="50">
                           <span class="label">First Name*</span>
+                          <span class="error" aria-live="polite"></span>
                         </label>
                         <label for="last-name" class="form__input">
-                          <input name="lastName" required type="text" id="last-name" placeholder="&nbsp;">
+                          <input name="lastName" type="text" id="last-name" placeholder="&nbsp;" required maxlength="50">
                           <span class="label">Last Name*</span>
+                          <span class="error" aria-live="polite"></span>
                         </label>
                       </div>
                       <label for="email" class="form__input">
-                        <input name="email" required type="email" id="email" placeholder="&nbsp;">
+                        <input name="email" type="email" id="email" placeholder="&nbsp;" required minlength="5" maxlength="254">
                         <span class="label">Personal Email*</span>
+                        <span class="error" aria-live="polite"></span>
                       </label>
                       <label for="phone" class="form__input">
-                        <input name="phone" required type="tel" id="phone" placeholder="&nbsp;">
+                        <input name="phone" type="tel" type="tel" id="phone" placeholder="&nbsp;" required minlength="10" maxlength="15">
                         <span class="label">Phone*</span>
+                        <span class="error" aria-live="polite"></span>
                       </label>
                       <label for="current-school" class="form__input">
-                        <input name="currentSchool" type="text" id="current-school" placeholder="&nbsp;">
+                        <input name="currentSchool" type="text" id="current-school" placeholder="&nbsp;" maxlength="100">
                         <span class="label">Current School</span>
                       </label>
                       <label for="grad-year" class="form__input">
                         <input name="gradYear" type="number" id="grad-year" placeholder="&nbsp;">
                         <span class="label">Grad Year</span>
+                        <span class="error" aria-live="polite"></span>
                       </label>
                       <label for="city" class="form__input">
-                        <input name="city" required type="text" id="city" placeholder="&nbsp;">
+                        <input name="city" type="text" id="city" placeholder="&nbsp;" required maxlength="100">
                         <span class="label">City*</span>
+                        <span class="error" aria-live="polite"></span>
                       </label>
                       <label for="state" class="form__input">
-                        <input name="state" required type="tel" id="state" placeholder="&nbsp;">
+                        <input name="state" type="tel" id="state" placeholder="&nbsp;" required maxlength="100">
                         <span class="label">State*</span>
+                        <span class="error" aria-live="polite"></span>
                       </label>
                     </div>
                     <button disabled class="step__button submit__btn" type="submit" id="contact-info-form-btn">Submit</button>
