@@ -656,6 +656,105 @@ body {
     align-self: center;
   }
 }
+.job__info__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  .actions__wrapper {
+    position: relative;
+    display: flex;
+
+    .skip {
+      position: absolute;
+      top: 13px;
+      left: 16px;
+    }
+
+    .step__button {
+      margin-top: 0;
+      align-self: center;
+    }
+  }
+
+  a {
+    font-weight: 600;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: underline;
+  }
+
+  input {
+    height: 59px;
+    border-radius: 8px;
+    border: 2px solid #B3B9C7;
+    font-size: 19.2px;
+    line-height: 28.8px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px 16px;
+    background: white;
+    color: #021546;
+    caret-color: #021546;
+
+    &:focus {
+      border-color: #09BD9E;
+      outline: none;
+    }
+  }
+
+  input::placeholder {
+    color: #B3B9C7;
+  }
+
+  textarea {
+    height: 238px;
+    border-radius: 8px;
+    border: 2px solid #B3B9C7;
+    font-size: 19.2px;
+    line-height: 28.8px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px 16px;
+    background: white;
+    color: #021546;
+    caret-color: #021546;
+    resize: none;
+
+    &:focus {
+      border-color: #09BD9E;
+      outline: none;
+    }
+  }
+
+  textarea::placeholder {
+    color: #B3B9C7;
+  }
+
+  textarea::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  textarea::-webkit-scrollbar-track {
+    border-radius: 10px;
+    cursor: default;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #B3B9C7;
+    border: 2px solid white;
+    cursor: default;
+  }
+}
+.language__form {
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 .coach__list {
   list-style: none;
   display: flex;
@@ -756,6 +855,14 @@ body {
   }
   .form__select {
     width: 100%;
+  }
+  .job__info__form > .actions__wrapper {
+    .skip {
+      top: -16px;
+    }
+    .step__button {
+      margin-top: 14px;
+    }
   }
   .coach__list {
     column-gap: 25px;

@@ -208,8 +208,13 @@
                 <!--JOB INFORMATION FORM-->
                 <div id="step-job-info">
                   <div class="step__intro">If you have a job title and/or the job description, please paste them in here. Doing so will help the AI help you create a more amazing, customized resume!</div>
-                  <form id="job-info-form">
-                    <button class="step__button" type="submit">Submit</button>
+                  <form id="job-info-form" class="job__info__form">
+                    <input name="jobTitle" type="text" placeholder="Job Title">
+                    <textarea name="jobDescription" placeholder="Job Description"></textarea>
+                    <div class="actions__wrapper">
+                      <a id="step-4-skip" class="skip">Skip</a>
+                      <button class="step__button" type="submit">Submit</button>
+                    </div>
                   </form>
                 </div>
                 <!--SELECT COACH-->
@@ -249,7 +254,7 @@
                 <!--SELECT LANGUAGE-->
                 <div id="step-language">
                   <div class="step__intro">We’re almost ready to begin building your resume but first, we have a few important questions.</div>
-                  <form id="language-form">
+                  <form id="language-form" class="language__form">
                     <div class="language__select">
                       <select autofocus form="language-form" name="language" id="language-select" required>
                         <option hidden disabled selected value>Select Language</option>

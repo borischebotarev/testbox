@@ -44,35 +44,10 @@ function onPageLoad() {
               event.preventDefault();
               jobInfo = new FormData(event.target);
               console.log(jobInfo);
-              step4.style.display = 'none';
-              step5List.addEventListener('click', (event) => {
-                selectedCoach = event.target.closest("li")?.getAttribute('coach');
-                console.log(selectedCoach);
-                document.getElementById('coachAvatar').src = `img\\Coaches\\Coach${selectedCoach}.png`;
-                step5.style.display = 'none';
-                step6Form.addEventListener('submit', (event) => {
-                  event.preventDefault();
-                  const data = new FormData(event.target);
-                  selectedLanguage = data.get('language');
-                  console.log(selectedLanguage);
-                  step6.style.display = 'none';
-                  stepWelcome.style.display = 'none';
-                  stepInterview.style.display = 'block';
-
-                  chosenAI.projectId = Wave.projectId;
-                  chosenAI.projectToken = Wave.projectToken;
-                  chosenAI.aiUserId = Wave.aiUserId;
-                  chosenAI.lobbyZoneId = Wave.lobbyZoneId;
-                  chosenAI.display = Wave.display;
-                  startLoadingAnimation();
-                  loadContent(selectedResumeTemplate);
-                });
-                step6LanguageSelect.addEventListener('change', () => {
-                  step6FormBtn.disabled = false;
-                });
-                step6.style.display = 'block';
-              })
-              step5.style.display = 'block';
+              switchFrom4To5Step();
+            });
+            step4Skip.addEventListener('click', (event) => {
+              switchFrom4To5Step();
             });
             step4.style.display = 'block';
           });
@@ -230,4 +205,36 @@ function updateStep3FormSubmit() {
     || isGradYearInvalid
     || isCityInvalid
     || isStateInvalid;
+}
+
+function switchFrom4To5Step() {
+  step4.style.display = 'none';
+  step5List.addEventListener('click', (event) => {
+    selectedCoach = event.target.closest("li")?.getAttribute('coach');
+    console.log(selectedCoach);
+    document.getElementById('coachAvatar').src = `img\\Coaches\\Coach${selectedCoach}.png`;
+    step5.style.display = 'none';
+    step6Form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.target);
+      selectedLanguage = data.get('language');
+      console.log(selectedLanguage);
+      step6.style.display = 'none';
+      stepWelcome.style.display = 'none';
+      stepInterview.style.display = 'block';
+
+      chosenAI.projectId = Wave.projectId;
+      chosenAI.projectToken = Wave.projectToken;
+      chosenAI.aiUserId = Wave.aiUserId;
+      chosenAI.lobbyZoneId = Wave.lobbyZoneId;
+      chosenAI.display = Wave.display;
+      startLoadingAnimation();
+      loadContent(selectedResumeTemplate);
+    });
+    step6LanguageSelect.addEventListener('change', () => {
+      step6FormBtn.disabled = false;
+    });
+    step6.style.display = 'block';
+  })
+  step5.style.display = 'block';
 }

@@ -97,6 +97,7 @@ const stateError = document.querySelector('#state ~ span.error');
 const step3FormBtn = document.getElementById('contact-info-form-btn');
 const step4 = document.getElementById('step-job-info');
 const step4Form = document.getElementById('job-info-form');
+const step4Skip = document.getElementById('step-4-skip');
 const step5 = document.getElementById('step-coach');
 const step5List = document.getElementById('select-coach');
 const step6 = document.getElementById('step-language');
