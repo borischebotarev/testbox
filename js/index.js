@@ -213,6 +213,8 @@ function validateInput(input, error, setIsInvalid, typeMismatchMessage) {
     error.textContent = typeMismatchMessage;
   } else if (input.validity.rangeUnderflow || input.validity.rangeOverflow) {
     error.textContent = typeMismatchMessage;
+  } else if (input.validity.patternMismatch) {
+    error.textContent = typeMismatchMessage;
   }
   error.className = 'error active';
   setIsInvalid(!input.validity.valid);
