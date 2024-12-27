@@ -401,8 +401,7 @@ body {
 .form__input {
   position: relative;
   height: 83px;
-  width: 100%;
-  max-width: 278px;
+  width: 278px;
   border-radius: 8px;
   overflow: hidden;
 
@@ -470,6 +469,116 @@ body {
     }
   }
 }
+.form__select {
+  position: relative;
+  height: 83px;
+  width: 278px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  .label {
+    position: absolute;
+    left: 16px;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    color: #7F879D;
+  }
+
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #B3B9C7;
+    font-size: 19.2px;
+    line-height: 28.8px;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    color: #7F879D;
+    padding: 25px 15px 0;
+    height: 59px;
+    background: white;
+    cursor: pointer;
+    transition: all .15s ease;
+
+    &.dirty {
+      font-size: 19.2px;
+      line-height: 28.8px;
+      font-weight: 400;
+      font-family: 'Roboto', sans-serif;
+      color: #021546;
+
+      + .label {
+        top: 4px;
+        font-size: 14.4px;
+        line-height: 21.6px;
+        transform: none;
+      }
+
+      ~ svg {
+        display: none;
+      }
+    }
+
+    &:not(.dirty) {
+      + .label {
+        top: 26px;
+        font-size: 19.2px;
+        line-height: 28.8px;
+        transform-origin: 0 0;
+        transform: translate3d(0,0,0);
+        transition: all .2s ease;
+        pointer-events: none;
+      }
+    }
+
+    &:invalid.dirty {
+      border-color: #FF3F00;
+    }
+
+    &:focus {
+      border-color: #09BD9E;
+      outline: none;
+      &:not(.dirty) {
+        + .label {
+          transform: translate3d(0,-22px,0) scale(.75);
+        }
+      }
+      &:invalid.dirty {
+        border-color: #FF3F00;
+      }
+    }
+  }
+
+  select option {
+    color: #021546;
+  }
+
+  select option:checked {
+    background-color: #B3B9C7; 
+  }
+
+  svg {
+    position: absolute;
+    top: 38px;
+    left: 85px;
+    stroke: #7F879D;
+    pointer-events: none;
+  }
+
+  .error {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: 'Work Sans', sans-serif;
+    color: #FF3F00;
+    box-sizing: border-box;
+    &.active {
+      padding-left: 16px;
+    }
+  }
+}
 .language__select {
   position: relative;
   display: inline-block;
@@ -489,14 +598,12 @@ body {
   background-color: white;
   cursor: pointer;
 }
-.language__select::after {
-  content: '▼';
+.language__select svg {
   position: absolute;
   top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+  right: 26px;
+  stroke: #021546;
   pointer-events: none;
-  color: #021546;
 }
 .language__select select option {
   background-color: white;
@@ -645,7 +752,10 @@ body {
     column-gap: 20px;
   }
   .form__input {
-    max-width: none;
+    width: 100%;
+  }
+  .form__select {
+    width: 100%;
   }
   .coach__list {
     column-gap: 25px;

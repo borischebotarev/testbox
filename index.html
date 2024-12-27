@@ -191,9 +191,14 @@
                         <span class="label">City*</span>
                         <span class="error" aria-live="polite"></span>
                       </label>
-                      <label for="state" class="form__input">
-                        <input name="state" type="tel" id="state" placeholder="&nbsp;" required maxlength="100">
+                      <label for="state" class="form__select">
+                        <select name="state" id="state" required>
+                          <option hidden disabled selected value></option>
+                        </select>
                         <span class="label">State*</span>
+                        <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.81274 1.05078L4.40637 5.05078L1 1.05078" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                         <span class="error" aria-live="polite"></span>
                       </label>
                     </div>
@@ -255,6 +260,9 @@
                         <option value="Somali">Somali</option>
                         <option value="Russian">Russian</option>
                       </select>
+                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.81274 1.05078L4.40637 5.05078L1 1.05078" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
                     </div>
                     <button disabled class="step__button" type="submit" id="language-form-btn">Continue</button>
                   </form>

@@ -94,7 +94,7 @@ function onPageLoad() {
           city.addEventListener('input', (event) => {
             validateInput(city, cityError, setCityInvalid);
           });
-          state.addEventListener('input', (event) => {
+          state.addEventListener('change', (event) => {
             validateInput(state, stateError, setStateInvalid);
           });
           step3.style.display = 'block';
