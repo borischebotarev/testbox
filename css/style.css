@@ -98,7 +98,7 @@ body {
   align-items: center;
   padding-right: 10px;
 }
-.header__nav { 
+.header__nav {
   left: 52px;
   position: absolute;
   font-size: 16px;
@@ -346,7 +346,7 @@ body {
 }
 .step {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 440px 1fr;
   gap: 70px;
 }
 .step__left {
@@ -362,15 +362,14 @@ body {
   box-shadow: 0px 4px 4px 0px #00000040;
 }
 .step__title {
-  font-size: 72px;
+  font-size: 68px;
   font-weight: 600;
-  line-height: 79px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 .step__intro {
-  font-size: 24px;
-  line-height: 36px;
-  margin-bottom: 28px;
+  font-size: 19px;
+  line-height: 24px;
+  margin-bottom: 20px;
 }
 .step__button {
   background-color: transparent;
@@ -401,7 +400,7 @@ body {
 .form__input {
   position: relative;
   height: 83px;
-  width: 278px;
+  width: calc(50% - 8px);
   border-radius: 8px;
   overflow: hidden;
 
@@ -472,7 +471,7 @@ body {
 .form__select {
   position: relative;
   height: 83px;
-  width: 278px;
+  width: calc(50% - 8px);
   border-radius: 8px;
   overflow: hidden;
 
@@ -555,13 +554,13 @@ body {
   }
 
   select option:checked {
-    background-color: #B3B9C7; 
+    background-color: #B3B9C7;
   }
 
   svg {
     position: absolute;
     top: 38px;
-    left: 85px;
+    right: 26px;
     stroke: #7F879D;
     pointer-events: none;
   }
@@ -613,7 +612,7 @@ body {
   line-height: 28.8px;
 }
 .language__select select option:checked {
-  background-color: #00DF91; 
+  background-color: #00DF91;
   color: #021546;
 }
 .resume__template__list {
@@ -625,17 +624,15 @@ body {
 .resume__template__list__item {
   cursor: pointer;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   -webkit-tap-highlight-color: transparent;
   width: 250px;
-  height: 300px;
   border-radius: 10px;
-  background-color: #D9D9D9;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 29px;
+}
+.resume__template__list__item img {
+  max-width: 100%;
+  width: 100%;
 }
 .contact__info__form {
   display: flex;
@@ -643,23 +640,17 @@ body {
   .fields {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 17px;
-    row-gap: 4px;
-    .name__group {
-      flex-grow: 1;
-      display: flex;
-      column-gap: 17px;
-      row-gap: 4px;
-    }
+    column-gap: 16px;
   }
   .submit__btn {
     align-self: center;
+    margin-top: 10px;
   }
 }
 .job__info__form {
   display: flex;
   flex-direction: column;
-  row-gap: 24px;
+  row-gap: 16px;
 
   .actions__wrapper {
     position: relative;
@@ -760,7 +751,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  column-gap: 40px;
+  column-gap: 30px;
   row-gap: 28px;
   .coach__list__item {
     cursor: pointer;
@@ -832,15 +823,9 @@ body {
     font-size: 38px;
     font-weight: 600;
     line-height: 42px;
-    margin-bottom: 15px;
   }
   .step__title {
     display: none;
-  }
-  .step__intro {
-    font-size: 19px;
-    line-height: 28px;
-    margin-bottom: 24px;
   }
   .resume__template__list {
     justify-content: center;
